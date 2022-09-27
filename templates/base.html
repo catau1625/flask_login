@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}Dojo Survey</title>{% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }} ">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/toastr.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/misestilos.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+
+    {% block estilos %}{% endblock %}
+
+
+
+
+    {% block scripts %}{% endblock %}
+</head>
+
+<body>
+
+    
+    {% block contenido %}
+    {% endblock %}
+
+    <script src="{{ url_for('static',filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery-3.5.1.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/index.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/toastr.min.js') }}"></script>   
+    <script>
+        toastr.options = {
+            "closeButton": true
+          }
+        {% for category, message in get_flashed_messages(with_categories=True) %}
+            toastr.{{ category }}('{{ message }}','Mensaje de Sistema');
+        {% endfor %}
+    </script>
+
+    {% block librerias %}{% endblock %}
+
+</body>
+
+</html>

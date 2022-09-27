@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+    <div class="box">
+        <div class="registro">
+            <form action="/process1" method="post" class="p-1 col-6 mx-auto my-5 bg-dark text-light float-start">
+                <div class="titulo"><h1>Registrarse</h1></div>
+                <div class="row-sm-10 mb-2">
+                    <label for="first_name">Nombre:</label>
+                    <input name="first_name" type="text" class="form-control">
+                </div>
+                <div class="row-sm-10 mb-2">
+                    <label for="last_name">Apellido:</label>
+                    <input name="last_name" type="text" class="form-control">
+                </div>
+                <div class="row-sm-10 mb-2">
+                    <label for="email">Email:</label>
+                    <input name="email" type="text" class="form-control">
+                </div>
+                <div class="row-sm-10 mb-2">
+                    <label for="password">Password:</label>
+                    <input name="password" type="text" class="form-control">
+                </div>
+                <div class="row-sm-10 mb-2">
+                    <label for="confirm_password">Confirmar password:</label>
+                    <input name="confirm_password" type="text" class="form-control">
+                </div>
+                <button id="boton" type="submit" class="btn btn-danger">Registrar</button>
+            </form>
+        </div>
+        <div class="ingreso">
+
+            <form action="/process2" method="post" class="p-1 col-6 mx-auto my-5 bg-dark text-light float-end">
+                <div class="titulo"><h1>Ingresar</h1></div>
+                <div class="row-sm-10 mb-2">
+                    <label for="email">Email:</label>
+                    <input name="email" type="text" class="form-control">
+                </div>
+                <div class="row-sm-10 mb-2">
+                    <label for="password">Password:</label>
+                    <input name="password" type="text" class="form-control">
+                </div>
+                <button id="boton" type="submit" class="btn btn-danger">Enviar</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

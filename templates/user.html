@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+	<nav class="navbar navbar-dark bg-dark">
+    	<div class="container-fluid">
+      		<a href="/" class="navbar-brand">Inicio</a>
+      		<form class="d-flex" role="search">
+        		<input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+        		<a class="btn btn-warning" href="/cerrar_sesion" type="submit">Salir</a>
+      		</form>
+    	</div>
+  	</nav>
+
+    <h1>Bienvenido Usuario</h1>
+{% endblock %}
